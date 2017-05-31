@@ -1,0 +1,20 @@
+{
+  "process": {
+    "name": "",
+    "authors": [
+      {
+        "name": "Jonas Jetschni",
+        "email": "jetschni@th-brandenburg.de"
+      },
+      {
+        "name": "Jonas Jetschni",
+        "email": "jetschni@th-brandenburg.de"
+      }
+    ],
+    "abstract" : "",
+    "description" : "",
+    "analysis": "",
+    "section": "",
+    "bpmn-model": ""
+  }
+}

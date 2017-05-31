@@ -1,0 +1,30 @@
+.nav-pane {
+    display:block;
+    height:120px;
+    text-align:center;
+    color:white;
+    text-weight:bold;
+    text-transform: uppercase;
+    font-size:35px;
+}
+
+.nav-pane a {
+    color:white;
+}
+
+
+.digitalCM{
+    background-color: rgb(192,34,0);
+}
+
+.digitalAD{
+    background-color: rgb(236,124,49);
+}
+
+.digitalT{
+    background-color: rgb(243,192,0);
+}
+
+.digitalR{
+    background-color: rgb(68,113,196);
+}
