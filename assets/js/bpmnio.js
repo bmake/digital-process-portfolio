@@ -55,8 +55,8 @@ function getParameterByName(name) {
 
 
     // load external diagram file via AJAX and import it
-    //https://cdn.rawgit.com/EduGraph/EduGraph-Integration/master/src/main/resources/edu-graph.bpmn
-  $.get(getParameterByName('src'), importXML, 'text');
+    //
+  $.get("https://cdn.rawgit.com/EduGraph/EduGraph-Integration/master/src/main/resources/edu-graph.bpmn", importXML, 'text');
 
 
 })(window.BpmnJS, window.jQuery);

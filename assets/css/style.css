@@ -1,17 +1,46 @@
+a, a:link,a:visited {
+    color:inherit;
+}
+
+.header {
+    background-color:#cc0a2f!important;
+    border-radius:0;
+    color:#fff;
+    margin-bottom:0;
+}
+
+.nav-pane-row {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-pane-row li {
+    display: inline-block;
+    width:25%;
+
+}
+
 .nav-pane {
-    display:block;
-    height:120px;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+    height:8rem;
     text-align:center;
-    color:white;
-    text-weight:bold;
     text-transform: uppercase;
-    font-size:35px;
+    font-size:20px;
+    opacity:0.7;
 }
 
-.nav-pane a {
+a.nav-pane {
     color:white;
 }
 
+a.nav-pane:hover {
+    text-decoration:none;
+    opacity:1;
+}
 
 .digitalCM{
     background-color: rgb(192,34,0);
@@ -27,4 +56,38 @@
 
 .digitalR{
     background-color: rgb(68,113,196);
+}
+
+#table-container {
+    display:none;
+}
+
+#card-deck-container {
+
+    margin-top:100px;
+}
+
+.card-deck{
+    margin:10px 0;
+}
+
+.card-deck > .card{
+    width: 20rem;
+    border:1px solid #000;
+}
+
+
+
+.process-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+
+.process-list li{
+    margin:2rem 0;
+    font-size: 2rem;
+
+
 }
