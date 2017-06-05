@@ -9,8 +9,20 @@ $( document ).ready(function() {
 
     $id = getParameterByName('id');
 
-
-    $('body').hide();
+    var loadingTimeout;
+    $('#loading').hide()
+        .ajaxStart(function() {
+            var element = $(this);
+            loadingTimeout = setTimeout(function() {
+                element.show();
+                $('#content').hide();
+            }, 500);
+        })
+        .ajaxStop(function() {
+            clearTimeout(loadingTimeout);
+            $(this).hide();
+            $('#content').show();
+        });
 
     $.getJSON( "https://bmake.th-brandenburg.de/apps/directus/api/1/tables/process/rows/" + $id + "?access_token=bJhldMj734uvz6wO", function( data ) {
         $('#process-name').text(data.process_name);
@@ -55,8 +67,16 @@ $( document ).ready(function() {
             }
             $.get( data.bpmn_model, importXML, 'text');
         }
+    }).done(function() {
+        $('#content').show();
+        $('#loading').hide();
 
-        $('body').show();
+    }).fail(function() {
+        console.log( "error" );
+        $('#content').html("<h1>Error</h1>");
     });
+
+
+
 
 });
