@@ -42,10 +42,23 @@ $( document ).ready(function() {
             });
 
         $.getJSON( $endpoint, function( data ) {
+
+
             $('.process-list').html("");
-            $.each(data.rows, function (key, value) {
-                $('.process-list').append('<li><a href="profile.html?id=' + value.id + '">' + value.process_name + '</a></li>');
-            });
+
+            //console.log(data);
+
+            console.log(data.rows);
+
+            if(!$.isArray(data.rows) ||  !data.rows.length){
+                $('.process-list').html("Keine Prozesse vorhanden");
+            }
+            else{
+                $.each(data.rows, function (key, value) {
+                    $('.process-list').append('<li><a href="profile.html?id=' + value.id + '">' + value.process_name + '</a></li>');
+                });
+            }
+
         }).done(function() {
 
         }).fail(function() {

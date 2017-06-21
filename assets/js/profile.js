@@ -74,8 +74,11 @@ $( document ).ready(function() {
 
         //.split(/\r|\n/)
 
-        $('#analysis').text(data.analysis);
-        $('#improvements').text(data.Improvements);
+
+        var converter = new showdown.Converter();
+
+        $('#analysis').html(converter.makeHtml(data.analysis));
+        $('#improvements').html(converter.makeHtml(data.Improvements));
 
 
 
