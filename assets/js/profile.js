@@ -48,7 +48,21 @@ $( document ).ready(function() {
         $('#category').text($categoryText);
 
         $('#digital-level .total').css('bottom', data.digitalization_level * 10 + '%');
-        $('#digital-level .total').text('Medien-bruchfrei');
+
+        var dLevel = data.digitalization_level
+        switch(true){
+            case (dLevel >=0 && dLevel < 3):
+                $dLevelText = "nicht digital";
+                break;
+            case (dLevel >= 3 && dLevel < 8):
+                $dLevelText = "teilweise digital";
+                break;
+            case (dLevel >= 8 && dLevel <= 10):
+                $dLevelText = "nicht digital";
+                break;
+        }
+
+        $('#digital-level .total').text($dLevelText);
         $('#digital-level .amount').css('height', data.digitalization_level * 10 + '%');
 
         if(data.bpmn_model){
