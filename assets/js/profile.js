@@ -26,7 +26,8 @@ $( document ).ready(function() {
 
     $.getJSON( "https://bmake.th-brandenburg.de/apps/directus/api/1/tables/process/rows/" + $id + "?access_token=bJhldMj734uvz6wO", function( data ) {
         $('#process-name').text(data.process_name);
-        //$('#authors').text(data.authors);
+        $('#authors').text(data.Authors);
+        $('#abstract').text(data.abstract);
         $('#description').text(data.description);
 
         switch(data.category) {
@@ -51,6 +52,9 @@ $( document ).ready(function() {
         $('#digital-level .amount').css('height', data.digitalization_level * 10 + '%');
 
         if(data.bpmn_model){
+
+            $bpmn_model = "https://cdn.rawgit.com/bmake/DigitalUniversity/master/" + data.bpmn_model;
+
             var BpmnNavigatedViewer = window.BpmnJS;
             var bpmnViewer = new BpmnNavigatedViewer({
                 container: '#canvas'
@@ -65,8 +69,17 @@ $( document ).ready(function() {
                     canvas.zoom('fit-viewport');
                 });
             }
-            $.get( data.bpmn_model, importXML, 'text');
+            $.get( $bpmn_model, importXML, 'text');
         }
+
+        //.split(/\r|\n/)
+
+        $('#analysis').text(data.analysis);
+        $('#improvements').text(data.Improvements);
+
+
+
+
     }).done(function() {
         $('#content').show();
         $('#loading').hide();
