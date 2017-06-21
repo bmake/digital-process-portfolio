@@ -19,6 +19,7 @@
     width: 20px;
     position: absolute;
     bottom: 5px;
+    margin:0 0 0 -5px;
 }
 .donation-meter strong {
     display: block;
@@ -51,6 +52,7 @@
     display: block;
     height: 50px;
     width: 50px;
+    margin:-5px 0 0 -5px;
 }
 .bulb .filler {
     background: #f34e54;
@@ -62,4 +64,5 @@
     top: -65px;
     right: -15px;
     z-index: 30;
+    margin:-5px 0 0 -5px;
 }
