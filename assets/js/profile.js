@@ -25,9 +25,15 @@ $( document ).ready(function() {
         });
 
     $.getJSON( "https://bmake.th-brandenburg.de/apps/directus/api/1/tables/process/rows/" + $id + "?access_token=bJhldMj734uvz6wO", function( data ) {
+
+        var converter = new showdown.Converter();
+
+        converter.setOption('disableForced4SpacesIndentedSublists', 'true');
+
         $('#process-name').text(data.process_name);
         $('#authors').text(data.Authors);
-        $('#abstract').text(data.abstract);
+        $('#abstract').html(converter.makeHtml(data.abstract));
+
         $('#description').text(data.description);
 
         switch(data.category) {
@@ -89,7 +95,7 @@ $( document ).ready(function() {
         //.split(/\r|\n/)
 
 
-        var converter = new showdown.Converter();
+
 
         $('#analysis').html(converter.makeHtml(data.analysis));
         $('#improvements').html(converter.makeHtml(data.Improvements));
