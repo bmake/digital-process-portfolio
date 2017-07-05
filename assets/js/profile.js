@@ -64,7 +64,7 @@ $( document ).ready(function() {
                 $dLevelText = "teilweise digital";
                 break;
             case (dLevel >= 8 && dLevel <= 10):
-                $dLevelText = "nicht digital";
+                $dLevelText = "vollständig digital";
                 break;
         }
 
